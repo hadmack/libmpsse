@@ -38,7 +38,7 @@ then
 	
 	if ! test $PYTHON
 	then
-		PYTHON="$(which python)"
+		PYTHON="$(which python3)"
 	fi
 
 	if ! test $SWIG

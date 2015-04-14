@@ -37,7 +37,7 @@ support.o:
 pyswig-build:
 	$(CC) $(CFLAGS) $(LDFLAGS) -DSWIGPYTHON -DLIBFTDI1=$(LIBFTDI1) -c support.c
 	$(CC) $(CFLAGS) $(LDFLAGS) -DSWIGPYTHON -DLIBFTDI1=$(LIBFTDI1) -c mpsse.c
-	$(SWIG) -python $(TARGET).i
+	$(SWIG) -python -py3 $(TARGET).i
 	$(CC) $(CFLAGS) -c  -DLIBFTDI1=$(LIBFTDI1) $(TARGET)_wrap.c  $(INC)
 	$(CC) $(CFLAGS) -shared $(FRAMEWORK) $(TARGET)_wrap.o mpsse.o support.o \
 		-o _pylib$(TARGET).so $(LDFLAGS) $(INC)
